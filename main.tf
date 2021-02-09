@@ -7,6 +7,11 @@ terraform {
   }
   required_version = "~> 0.14"
 }
+ backend "s3" {
+    bucket = "d93903aa-e624-187e-5872-5e2e5e6ca896-backend"
+    key    = "terraform/webapp/terraform.tfstate"
+    region = "us-east-1"
+ }
 
 provider "aws" {
   region = var.region
